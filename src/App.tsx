@@ -295,7 +295,6 @@ export default function App() {
     alt="Gandom Pastry Hero" 
     className="w-full h-full object-cover"
   />
-  <div className="absolute inset-0 bg-black/40" />
 </div>
           {/* Subtle overlay to ensure text readability */}
           <div className="absolute inset-0 bg-black/10 pointer-events-none" />
