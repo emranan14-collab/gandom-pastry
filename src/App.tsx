@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef, useState } from 'react';
 import { MapPin, Phone, Instagram, Facebook, Clock, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import logo from "./images/gandom-pastry-logo-primary.png";
+import heroMobile from './images/hero-image-tablet-mobile.jpg';
 
 const PRODUCTS = [
   {
@@ -254,7 +255,7 @@ export default function App() {
             className="h-[150px] w-[150px] flex items-center justify-center"
           >
             <img 
-              src={logo}
+             src={logo}
   alt="Gandom Pastry Logo" 
   className="h-full w-full object-contain"
 />
@@ -287,15 +288,15 @@ export default function App() {
             className="absolute inset-0 w-full h-full hidden md:block"
             title="Spline 3D Background Desktop"
           ></iframe>
-          {/* Mobile/Tablet Spline */}
-          <iframe 
-            src='https://my.spline.design/faisalgandompastrym-jhyHPNaMz5C2I6SkvxvJKDiE/' 
-            frameBorder='0' 
-            width='100%' 
-            height='100%'
-            className="absolute inset-0 w-full h-full block md:hidden"
-            title="Spline 3D Background Mobile"
-          ></iframe>
+          {/* Mobile/Tablet Static Image */}
+<div className="absolute inset-0 w-full h-full block md:hidden">
+  <img 
+    src={heroMobile} 
+    alt="Gandom Pastry Hero" 
+    className="w-full h-full object-cover"
+  />
+  <div className="absolute inset-0 bg-black/40" />
+</div>
           {/* Subtle overlay to ensure text readability */}
           <div className="absolute inset-0 bg-black/10 pointer-events-none" />
         </div>
@@ -364,9 +365,10 @@ export default function App() {
         </div>
 
         <motion.div 
-          className="flex gap-10 px-6 pb-20 cursor-grab active:cursor-grabbing overflow-x-auto no-scrollbar snap-x"
-          drag="x"
-          dragConstraints={{ right: 0, left: -1400 }}
+          className="flex gap-10 px-6 pb-20 overflow-x-auto no-scrollbar snap-x scroll-smooth"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
         >
           {PRODUCTS.map((product, idx) => (
             <div key={product.id} className="snap-center">
@@ -437,9 +439,7 @@ export default function App() {
 
         <motion.div 
           ref={galleryRef}
-          className="flex gap-6 px-6 pb-10 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing"
-          drag="x"
-          dragConstraints={{ right: 0, left: -1200 }}
+          className="flex gap-6 px-6 pb-10 overflow-x-auto no-scrollbar scroll-smooth"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -448,7 +448,7 @@ export default function App() {
             <motion.div
               key={i}
               whileHover={{ scale: 0.95, rotate: i % 2 === 0 ? 2 : -2 }}
-              className="min-w-[400px] h-[500px] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white"
+              className="min-w-[300px] md:min-w-[400px] h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white"
             >
               <img 
                 src={img} 
@@ -669,3 +669,4 @@ export default function App() {
     </div>
   );
 }
+
