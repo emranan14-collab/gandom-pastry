@@ -224,7 +224,7 @@ export default function App() {
       style={{ direction: isEnglish ? 'ltr' : 'rtl' }}
     >
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-[100] px-6 py-5 flex justify-between items-center bg-section-dark/60 backdrop-blur-xl border-b border-gold/5">
+      <nav className="sticky top-0 w-full z-[100] px-6 py-5 flex justify-between items-center bg-section-dark/60 backdrop-blur-xl border-b border-gold/5 min-h-[115px]">
         {/* Left Side: Navigation Links */}
         <div className="hidden lg:flex items-center gap-8">
           {[
@@ -251,10 +251,10 @@ export default function App() {
         {/* Center: Logo */}
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3">
           <motion.div 
-            className="h-12 w-12 bg-white rounded-2xl shadow-lg border border-gold/10 p-2 flex items-center justify-center"
+            className="h-[75px] w-[75px] flex items-center justify-center"
           >
             <img 
-  src={logo}
+              src={logo}
   alt="Gandom Pastry Logo" 
   className="h-full w-full object-contain"
 />
@@ -275,7 +275,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="h-screen flex flex-col items-center justify-end pb-0 relative overflow-hidden px-6 perspective-1000">
+      <section id="hero" className="h-[calc(100vh-115px)] flex flex-col items-center justify-end pb-0 relative overflow-hidden px-6 perspective-1000">
         {/* Spline 3D Hero Background */}
         <div className="absolute inset-0 z-0">
           {/* Desktop Spline */}
@@ -305,14 +305,6 @@ export default function App() {
           className="text-center z-10 preserve-3d pointer-events-none"
         >
           <div className="pointer-events-auto">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, type: "spring" }}
-              className="mb-8 inline-block p-4 bg-white/50 backdrop-blur-sm rounded-[3rem] border border-gold/20 shadow-2xl"
-            >
-              <Star className="text-gold" size={48} fill="currentColor" />
-            </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -677,4 +669,3 @@ export default function App() {
     </div>
   );
 }
-
