@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&family=Vazirmatn:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-farsi: "Vazirmatn", sans-serif;
+  
+  --color-gold: #F5BA27;
+  --color-gold-light: #F4E4BC;
+  --color-cream: #734C3F;
+  --color-brown-dark: #2D241E;
+  --color-brown-light: #5C4B3F;
+  --color-section-light: #EFD3B7;
+  --color-section-dark: #734C3F;
+}
+
+@layer base {
+  body {
+    @apply bg-section-dark text-white font-sans overflow-x-hidden;
+    direction: rtl;
+  }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8860B;
+}

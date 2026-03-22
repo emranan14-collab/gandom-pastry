@@ -1,0 +1,7 @@
+{
+  "name": "Gandom Pastry - شیرینی سرای گندم",
+  "description": "A premium, 3D interactive experience for Gandom Pastry in Dashte Barchi, Kabul. Explore our delicious pastries with immersive side-scrolling and animations.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
