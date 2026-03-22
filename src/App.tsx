@@ -251,7 +251,7 @@ export default function App() {
         {/* Center: Logo */}
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3">
           <motion.div 
-            className="h-[75px] w-[75px] flex items-center justify-center"
+            className="h-[150px] w-[150px] flex items-center justify-center"
           >
             <img 
               src={logo}
