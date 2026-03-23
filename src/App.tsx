@@ -334,7 +334,7 @@ export default function App() {
       </section>
 
       {/* Side Scrolling Products */}
-      <section id="products" className="py-32 bg-[#FFF2E9] text-brown-dark relative overflow-hidden">
+      <section id="products" className="py-32 bg-[#FAE4CD] text-brown-dark relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-section-dark to-transparent opacity-20" />
         
         <div className="px-6 mb-16 flex flex-col md:flex-row justify-between items-center gap-8">
